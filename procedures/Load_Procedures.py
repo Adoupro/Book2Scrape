@@ -4,6 +4,7 @@ Returns:
     _type_: _description_
 """
 
+from urllib.request import urlretrieve
 import pandas as pd
 
 
@@ -14,7 +15,7 @@ class LoadProcedure(object):
         object (_type_): _description_
     """
 
-    def book_loading(self, book_information: dict, path) -> None:
+    def book_loading(self, root_url: str, book_information: dict, path: str) -> None:
         """_summary_
 
         Args:
@@ -37,11 +38,10 @@ class LoadProcedure(object):
             "image": "image_url",
             "description": "product_description"
         }
-        
-        del book_information['Product Type']
-        del book_information['Tax']
-        del book_information['Number of reviews']
 
-        dataframe: pd.DataFrame = pd.DataFrame(book_information)
+        dataframe: pd.DataFrame = pd.DataFrame.from_records(book_information)
         dataframe = dataframe.rename(columns=columns)
+        dataframe['image_url'] = dataframe['image_url'].replace('\.\./\.\./', f"{root_url}", regex=True)
+        dataframe['image_url'].apply(lambda x: urlretrieve(x, f'images/{x.split('/')[-1]}'))
+
         dataframe.to_csv(path, index=False, sep=';')
