@@ -1,8 +1,4 @@
-Certainly! Below is a sample README file for your Python script:
-
----
-
-# Book Information Extraction and Transformation
+# Book2Scrape APP
 
 ## Overview
 This Python script is designed to extract book information from a website, transform the data, and save it into CSV files categorized by book category.
