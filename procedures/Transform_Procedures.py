@@ -9,20 +9,20 @@ from bs4 import BeautifulSoup
 
 
 class TransformProcedure(object):
-    """_summary_
+    """TransformProcedure class for processing book data.
 
     Args:
-        object (_type_): _description_
+        object (type): Parent class.
     """
 
     def book_transform(self, book: dict) -> dict:
-        """_summary_
+        """Transforms book data into a structured dictionary.
 
         Args:
-            book (dict): _description_
+            book (dict): A dictionary containing book information.
 
         Returns:
-            dict: _description_
+            dict: A structured dictionary with book information.
         """
 
         information_dict: dict = {}
