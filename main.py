@@ -39,12 +39,12 @@ def main():
     for i, row in dataframe.iterrows():
         book: dict = extractor.book_extraction(row.category, row.url)
         book: dict = transformater.book_transform(book)
-        all_books.append(book)
 
         if row.category != category:
             loader.book_loading(root_url=root_url, book_information=all_books, path=f"data/{category}.csv")
             category = row.category
             all_books: list = []
 
+        all_books.append(book)
 
 main()
