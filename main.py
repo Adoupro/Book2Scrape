@@ -1,5 +1,4 @@
-"""_summary_
-"""
+"""A script to extract book information from a website, transform it, and save it in CSV files."""
 
 import pandas as pd
 from procedures.Extract_Procedures import ExtractProcedure
@@ -8,7 +7,9 @@ from procedures.Load_Procedures import LoadProcedure
 
 
 def main():
-    """_summary_
+    """
+    This function extracts book information from a website, transforms it,
+    and saves it in CSV files categorized by book category.
     """
 
     extractor: ExtractProcedure = ExtractProcedure()

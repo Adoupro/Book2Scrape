@@ -9,17 +9,21 @@ import pandas as pd
 
 
 class LoadProcedure(object):
-    """_summary_
+    """
+    This class handles loading book information into a DataFrame, modifying it, and saving it as a CSV file.
 
     Args:
-        object (_type_): _description_
+        object (type): The base class.
     """
 
     def book_loading(self, root_url: str, book_information: dict, path: str) -> None:
-        """_summary_
+        """
+        Loads book information into a DataFrame, modifies and saves it as a CSV file.
 
         Args:
-            book_information (dict): _description_
+            root_url (str): The base URL to append to image URLs.
+            book_information (dict): A dictionary containing book information.
+            path (str): The file path to save the CSV file.
 
         Returns:
             None
