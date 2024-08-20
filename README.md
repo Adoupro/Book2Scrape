@@ -12,7 +12,9 @@ This Python script is designed to extract book information from a website, trans
 pip install -R requirements.txt
 ```
 
-2. Execute main.py to start the extraction and transformation process.
+2. Create a images and a data folder
+
+3. Execute main.py to start the extraction and transformation process.
 
 ## Steps
 1. The `ExtractProcedure` class is responsible for extracting book information from the website.
